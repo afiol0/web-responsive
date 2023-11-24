@@ -20,19 +20,18 @@ body {
     color: wheat;
     text-align: center;
     margin: 300px 0;
-   /* margin: 372px 0;*/
     font-size: 28px;
 }
 h2 {
     color: wheat;
 }
 header {
-    height: 150px;
+    height: 90px;
 }
 header h1 {
     font-size: 50px;
     text-align: center;
-    line-height: 150px;
+    line-height: 100px;
 }
 nav {
     height:50px;
@@ -40,13 +39,46 @@ nav {
 nav h2 {
     font-size: 36px;
     text-align: center;
-    line-height: 150px
+    line-height: 50px
 }
-#contenedor {
-    width: 960px;
+#content {
+    width: 94%;
     margin: auto;
+    margin-left: 40px;
     margin-top: 20px;
-    margin-bottom: 20px;
+}
+#contenido {
+    width: 700px;
+    height: 500px;
+    float: left;
+    margin-top: 10px;
+    margin-right: 10px;
+    text-align: justify;
+}
+#contenido h2 {
+    font-size: 40px;
+    text-align: left;
+    line-height: 60px;
+}
+aside {
+    width: 250px;
+    height: 500px;
+    margin-top: 10px;
+    float: right;
+    text-align: start;
+}
+aside h2 {
+    font-size: 40px;
+    text-align: center;
+    /*line-height: 500px;*/
+}
+footer {
+    clear: both;
+}
+footer h2 {
+    font-size: 40px;
+    text-align: center;
+    padding: 20px;
 }
 @keyframes fondoanimado{
     0%{
