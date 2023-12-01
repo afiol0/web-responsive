@@ -10,11 +10,13 @@
 }
 
 body {
+    height: 100%;
     background: linear-gradient(135deg
     ,#00b7d4, #505488,#2F3F80,#161569,
     #5A4894, #A950A1,#FF7CAE);
     background-size: 200% 200%;
     animation: fondoanimado 10s infinite;
+    background-color: aquamarine;
 }
 .texto {
     color: wheat;
@@ -27,53 +29,37 @@ h2 {
 }
 header {
     height: 90px;
+    background-color: #001f3f;  
 }
 header h1 {
+    color: wheat;
     font-size: 50px;
     text-align: center;
     line-height: 100px;
 }
 nav {
     height:50px;
+    justify-content: center;
+    background-color: #483d72;
+    display: flex;
+    color: wheat;
 }
 nav h2 {
     font-size: 36px;
     text-align: center;
     line-height: 50px
 }
-#content {
-    width: 94%;
-    margin: auto;
-    margin-left: 40px;
-    margin-top: 20px;
+nav li {
+    margin: 0 50px;
+    font-size: 30px
 }
-#contenido {
-    width: 700px;
-    height: 500px;
-    float: left;
-    margin-top: 10px;
-    margin-right: 10px;
-    text-align: justify;
-}
-#contenido h2 {
-    font-size: 40px;
-    text-align: left;
-    line-height: 60px;
-}
-aside {
-    width: 250px;
-    height: 500px;
-    margin-top: 10px;
-    float: right;
-    text-align: start;
-}
-aside h2 {
-    font-size: 40px;
-    text-align: center;
-    /*line-height: 500px;*/
+nav ul {
+    list-style-type: none;
+    display: flex;
 }
 footer {
     clear: both;
+    background-color: #7b63c8;
 }
 footer h2 {
     font-size: 40px;
