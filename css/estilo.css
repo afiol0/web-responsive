@@ -17,6 +17,9 @@ body {
     background-size: 200% 200%;
     animation: fondoanimado 10s infinite;
     background-color: aquamarine;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 .texto {
     color: wheat;
@@ -41,6 +44,7 @@ nav {
     height:50px;
     justify-content: center;
     background-color: #483d72;
+    margin-bottom: 10px;
     display: flex;
     color: wheat;
 }
@@ -53,11 +57,24 @@ nav li {
     margin: 0 50px;
     font-size: 30px
 }
+a {
+    text-decoration: none;
+    color: wheat;
+}
 nav ul {
     list-style-type: none;
     display: flex;
 }
+#content {
+    flex: 1;
+    min-height: 100vh;
+}
 footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 10px;
     clear: both;
     background-color: #7b63c8;
 }
