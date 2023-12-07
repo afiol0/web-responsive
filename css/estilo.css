@@ -12,9 +12,7 @@
     font-family: 'Poppins';
     color: wheat;
 }
-
 body {
-    height: 100%;
     background: linear-gradient(135deg
     ,#00b7d4, #505488,#2F3F80,#161569,
     #5A4894, #A950A1,#FF7CAE);
@@ -107,8 +105,8 @@ footer a {
 }
 /* Estilo para página de Cursos */
 .contenido-web-cursos {
-    height: 73vh;
-    width: 140vh;
+    height: 72vh;
+    width: 160vh;
 }
 .contenido-web-cursos h2 {
    margin-left: 30px;
@@ -140,7 +138,7 @@ footer a {
 
 .contenido-web-soporte {
     height: 73vh;
-    width: 140vh;
+    width: 160vh;
 } 
 .contenido-web-soporte h2 {
     font-size: 60px;
@@ -150,7 +148,8 @@ footer a {
 .contenido-soporte {
     margin: 20px;
     padding: 20px;
-    width: 80%;
+    width: 100%;
+
     border-radius: 8px;
     background: linear-gradient(135deg,#bc80ff,#f2e7ff);
 }
