@@ -8,7 +8,7 @@ En la página de '¿Quienes Somos? encontramos un apartado que indica un poco co
 Todas tienen un footer con un 'mailto' de contacto.
 
 ## Estructura de carpetas
-
+``` bash
 | -- css/
 |   | -- styles.css
 | -- fonts/
@@ -24,7 +24,7 @@ Todas tienen un footer con un 'mailto' de contacto.
 |   | -- portada.png
 |   | -- react-img.png
 | - - README.md
-
+```
 ## Teconologias utilizadas
 La página web ha sido desarrollada utilizando las siguientes tecnologías:
 
