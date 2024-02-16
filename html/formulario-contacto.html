@@ -22,17 +22,31 @@
             <!-- Enlaces a otras páginas -->
             <li><a href="./pagina-cursos.html">Cursos</a></li>
             <li><a href="./pagina-ayuda.html">¿Quiénes Somos?</a></li>
-            <li><a href="./formulario-contacto.html">Contacto</a></li>
+            <li><a href="./pagina-inicio.html">Inicio</a></li>
         </ul>
     </nav>
 
     <!-- Contenido principal de la página -->
-    <section id="contenido-web">
-        <div class="portada">
-            <!-- Un titulo para el contenido principal (de la empresa en este caso) -->
-            <span>Desarrollo Web <br> Profesional</span>
-        </div>
-    </section>
+    
+    <div class="formulario">
+        <h2>Formulario de contacto</h2>
+        <form action="" method="" id="formulario" onsubmit="return validarFormulario()">
+
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+
+            <label for="telefono">Telefono:</label>
+            <input type="tel" id="telefono" name="telefono">
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
 
     <!-- Pie de página -->
     <footer>
@@ -44,6 +58,8 @@
         <p>Para ver el aviso de privacidad,
             accede a devinnovation.com/aviso</p>
     </footer>
+
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

@@ -111,7 +111,7 @@ footer a {
 /* Estilo para página de Cursos ajustando la altura y ancho */
 .contenido-web-cursos {
     height: 72vh;
-    width: 160vh;
+    width: 162vh;
 }
 /* Estilo para página de Cursos, ajustamos el subtitulo h2 */
 .contenido-web-cursos h2 {
@@ -147,7 +147,7 @@ footer a {
 /* Estilo para página de Quienes Somos */
 
 .contenido-web-soporte {
-    height: 73vh;
+    height: 100vh;
     width: 160vh;
 } 
 /* Estilo para el subtitulo h2 */
@@ -346,4 +346,37 @@ footer a {
         font-style: italic;
         color: #380467;
     }
+}
+
+/* Formulario de contacto*/
+.formulario {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #483d72;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+input[type="submit"] {
+    background-color: #8c2df0;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background-color: #661dac;
 }
