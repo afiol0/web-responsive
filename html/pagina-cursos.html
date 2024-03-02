@@ -22,47 +22,39 @@
             <!-- Enlaces a otras páginas -->
             <li><a href="./pagina-inicio.html">Inicio</a></li>
             <li><a href="./pagina-ayuda.html">¿Quiénes Somos?</a></li>
+            <li><a href="./formulario-contacto.html">Contacto</a></li>
+            <li><a href="./cuestionario.html">Cuestionario</a></li>
         </ul>
     </nav>
 
+    <main class="pagina-web-cursos">
     <!-- Contenido principal de la página, relacionado con los cursos -->
-    <main class="contenido-web-cursos">
-        <!-- Título de la sección de cursos -->
-        <h2>Nuestros Cursos</h2>
+    <div class="carrusel">
+        <div class="atras">
+            <img id="atras" src="../img/flecha-izquierda.svg" alt="Atras" loading="lazy">
+        </div>
 
-        <!-- Tarjetas de cursos -->
-        <div class="card">
-            <img src="../img/html-img.png" alt="Curso HTML">
-            <p>HTML</p>
-            <span>Curso completo de HTML</span>
+        <div class="imagenes">
+            <div id="img">
+                <img class="img" src="../img/html-img.png" alt="Imagen 1" loading="lazy">
+            </div>
+
+            <div id="texto" class="texto">
+                <h3>Curso</h3>
+                <p>Descripcion</p>
+            </div>
         </div>
-        <div class="card">
-            <img src="../img/css-img.png" alt="Curso CSS">
-            <p>CSS</p>
-            <span>Curso completo de CSS</span>
+
+        <div class="adelante" id="adelante">
+            <img src="../img/flecha-derecha.svg" alt="Adelante" loading="lazy">
         </div>
-        <div class="card">
-            <img src="../img/js-img.png" alt="Curso JavaScript">
-            <p>JavaScript</p>
-            <span>Curso completo de JavaScript</span>
-        </div>
-        <div class="card">
-            <img src="../img/react-img.png" alt="Curso React">
-            <p>React</p>
-            <span>Curso completo de React</span>
-        </div>
-    </main>
+    </div>
+
+    <div class="puntos" id="puntos"></div>
+</main>
 
     <!-- Pie de página -->
-    <footer>
-        <!-- Información de contacto -->
-        <p>- Contáctanos al 444-444-444 o envía un correo a </p>
-        <a href="mailto:soporte@devinnovation.com"> soporte@devinnovation.com</a>
-
-        <!-- Enlace al aviso de privacidad -->
-        <p>- Para ver el aviso de privacidad,
-            accede a devinnovation.com/aviso</p>
-    </footer>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

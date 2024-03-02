@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Configuración del documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Web Responsive</title>
+    <!-- Enlace al archivo de estilos CSS -->
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+
+<body>
+    <!-- Encabezado de la página -->
+    <header>
+        <h1>Dev Innovation</h1>
+    </header>
+
+    <!-- Barra de navegación -->
+    <nav>
+        <ul>
+            <!-- Enlaces a otras páginas -->
+            <li><a href="./pagina-inicio.html">Inicio</a></li>
+            <li><a href="./pagina-cursos.html">Cursos</a></li>
+            <li><a href="./pagina-ayuda.html">¿Quiénes Somos?</a></li>
+            <li><a href="./formulario-contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido principal de la página -->
+    
+    <div class="cuestionario">
+        <h2>Cuestionario</h2>
+        <form action="" method="" id="cuestionario" onsubmit="">
+            <fieldset>
+                <legend>Información personal:</legend>
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" id="nombre" name="nombre" required><br>
+                <label for="correo">Correo electrónico:</label><br>
+                <input type="email" id="correo" name="correo" required><br>
+                <label for="edad">Edad:</label><br>
+                <input type="number" id="edad" name="edad" required><br>
+                <label for="pais">País:</label><br>
+                <input type="text" id="pais" name="pais" required><br>
+            </fieldset>
+            <fieldset>
+                <legend>Opinión sobre DevInnovation:</legend>
+                <label for="facilidad">¿Qué tan fácil de usar encontraste la página?</label><br>
+                <input type="range" id="facilidad" name="facilidad" min="1" max="10" required><br>
+                <label for="recomendacion">¿Recomendarías la página a otras personas interesadas en aprender programación web?</label><br>
+                <input type="radio" id="si" name="recomendacion" value="Sí" required>
+                <label for="si">Sí</label>
+                <input type="radio" id="no" name="recomendacion" value="No">
+                <label for="no">No</label><br>
+            </fieldset>
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
