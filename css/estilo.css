@@ -11,7 +11,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins';
-}    
+}
+
 /* Encabezado de la página, el header tiene un color mas oscuro que las otras secciones*/
 header {
     height: 90px;
@@ -33,10 +34,12 @@ nav {
     margin-bottom: 10px;
     display: flex;
 }
-nav button img{
+
+nav button img {
     height: 48px;
     width: 48px;
 }
+
 /* Estilos de los elementos de la barra de navegación */
 nav li {
     margin: 0 50px;
@@ -136,6 +139,20 @@ footer a {
 .contenido-soporte p {
     line-height: 1.5;
     color: #661dac;
+    display: none;
+}
+
+/* Esta clase sirve para darle una animacion a los parrafos al ser mostrados*/
+.contenido-ayuda {
+    transition: opacity 0.5s ease-in-out;
+    /* Añade transición de opacidad para animar la aparición */
+    opacity: 0;
+}
+
+/* Esta clase sirve para mostrar el contenido una vez adquirida esta clase*/
+.contenido-ayuda.mostrar {
+    opacity: 1;
+    /* Para mostrarlo cambia la opacidad para que se vea*/
 }
 
 /* Ajuste para los h4 que serán subtitulos de los parrafos */
@@ -143,6 +160,336 @@ footer a {
     font-size: 18px;
     font-style: italic;
     color: #380467;
+}
+
+/* Cambio el color de los <h4> al pasar el raton por encima */
+.contenido-soporte h4:hover {
+    background-color: #f9b2ff;
+    cursor: pointer;
+}
+
+/* Formulario de contacto*/
+.formulario {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    resize: none;
+}
+
+input[type="button"] {
+    background-color: #8c2df0;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="button"]:hover {
+    background-color: #661dac;
+}
+
+/* Cuestionario */
+.cuestionario {
+    height: fit-content;
+    width: 40%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+}
+
+.cuestionario textarea {
+    resize: none;
+}
+
+.cuestionario fieldset {
+    border: none;
+    margin-bottom: 20px;
+}
+
+.cuestionario input[type="range"] {
+    width: 100%;
+}
+
+.cuestionario input[type="button"] {
+    background-color: #8c2df0;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.cuestionario input[type="button"]:hover {
+    background-color: #661dac;
+}
+
+/* Le damos estilo para que se centre el carrusel en la pantalla y se centre su contenido */
+.carrusel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    height: 70vh;
+}
+
+/* Le damos estilo para que muestren flexibles y centradas */
+.imagenes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+}
+
+/* Le damos estilo a la imagen para que tenga sombra y le marcamos una grandaria, se rescalee segun la resolucion y se resalten los colores */
+.img {
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.85);
+    height: 576px;
+    width: 1134px;
+    border-radius: 15px;
+    margin: 5px;
+    object-fit: cover;
+    filter: saturate(175%);
+}
+
+/* Marcamos el estilo para que al estar inactivo el texto sea transparente y se ubique en la posición -15 de y */
+.texto {
+    overflow: hidden;
+    position: absolute;
+    flex-direction: column;
+    transform: translateY(-15px);
+    margin-bottom: 9px;
+    backdrop-filter: blur(20px);
+    background-color: rgba(63, 106, 138, 0.21);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+}
+
+/* Marcamos el estilo del titulo del curso */
+.texto h3 {
+    text-shadow: 0px 0px 15px black;
+    padding-top: 40px;
+    color: wheat;
+    font-weight: 300;
+    font-size: 36px;
+}
+
+/* Marcamos el estilo de la descripción */
+.text p {
+    align-items: center;
+    padding: 20px;
+    font-size: 0px;
+    font-weight: 300;
+}
+
+/* Para que al estar inactivo se muestre de este tamaño y al volver a ese estado tarde*/
+.imagenes .texto {
+    width: 600px;
+    height: 100px;
+    transition: 2s;
+}
+
+/* Para que cuando se pase el raton por encima se mueva el texto hacia arriba y se oscurezca para que sea mas visible */
+.imagenes:hover .texto {
+    transition: height 1s, transform 1s, background-color 1s;
+    transform: translateY(-80px);
+    height: 250px;
+
+}
+
+/* Para que cuando no esté el raton encima se marque */
+.imagenes:hover .texto p {
+    transition: font-size 0s .2s linear;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+/* Los mantendremos centrados para que no se muevan */
+.puntos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Esto marcará el punto de color negro con un font weight de 500 para que sea un punto grande */
+.puntos p {
+    font-size: 100px;
+    font-weight: 500;
+    margin-top: -50px;
+    color: black;
+}
+
+/* Para que se vea bien los puntos al ser resaltado aumentamos el peso de la fuente y le cambiamos el color */
+.puntos .bold {
+    font-weight: 700;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #5E17EB;
+}
+
+/* Boton tema claro-oscuro*/
+
+.claro {
+    background: linear-gradient(135deg, #f7f5fd, #f7f5fd, #e4ddf7, #d1c1f1,
+            #b99de8, #a275dd, #9357d0, #8245bc);
+    color: #341754;
+    transition: all 2s linear;
+    animation: fondoanimado 10s infinite;
+    background-size: 200% 200%;
+}
+
+.claro .portada span {
+    color: #e7dcf8;
+}
+
+.claro a {
+    color: #341754;
+}
+
+.claro nav {
+    background-color: #b99de8;
+}
+
+.claro header {
+    background-color: #a275dd;
+}
+
+.claro footer {
+    background: linear-gradient(135deg, #d4c0f2, #ba98e8, #8752cb);
+    color: #341754;
+}
+
+.claro .formulario {
+    background: linear-gradient(135deg, #8752cb, #d4c0f2, #ba98e8, #8752cb);
+}
+
+.claro .cuestionario {
+    background: linear-gradient(135deg, #bdaed1, #d4c0f2, #ba98e8, #8752cb);
+}
+
+/* Fondo gradiente animado, conectado a una animación */
+.oscuro {
+    background: linear-gradient(135deg, #00b7d4, #505488, #2F3F80, #161569,
+            #5A4894, #A950A1, #FF7CAE);
+    background-size: 200% 200%;
+    transition: all 2s linear;
+    animation: fondoanimado 10s infinite;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: wheat;
+}
+
+.oscuro a {
+    color: wheat;
+}
+
+.oscuro footer {
+    background: linear-gradient(135deg, #8c2df0, #661dac);
+}
+
+.oscuro .formulario {
+    background: linear-gradient(135deg, #FF7CAE, #2F3F80, #161569, #5A4894, #FF7CAE);
+}
+
+.oscuro .cuestionario {
+    background: linear-gradient(135deg, #927cff, #2F3F80, #161569, #5A4894, #FF7CAE);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin: 6px;
+}
+
+.switch toogle {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #9a86fd;
+    border-radius: 34px;
+    -webkit-transition: 0.8s;
+    transition: 0.8s;
+}
+
+.slider::before {
+    position: absolute;
+    content: '';
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    border-radius: 50%;
+    background-color: #fff;
+    -webkit-transition: 0.8s;
+    transition: 0.8s;
+}
+
+#toogle {
+    display: none;
+}
+
+#toogle:checked+.slider {
+    background-color: #ffdb70;
+}
+
+#toogle:focus+.slider {
+    box-shadow: 0 0 1px #ffdb70;
+}
+
+#toogle:checked+.slider::before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Alert customizado*/
+.custom-alert {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #a10df1;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.cerrarAlert {
+    margin-left: 15px;
+    cursor: pointer;
 }
 
 /* Media query para pantallas con medidas de AirPad Pro*/
@@ -168,7 +515,7 @@ footer a {
 
     nav li {
         margin: 18px;
-        font-size: 36px;
+        font-size: 32px;
     }
 
     .portada {
@@ -211,6 +558,52 @@ footer a {
         color: #380467;
     }
 
+    .formulario {
+        max-width: 900px;
+    }
+
+    .cuestionario {
+        width: 95%;
+    }
+    .cuestionario h2 {
+        font-size: 48px;
+    }
+    .cuestionario legend {
+        font-size: 32px;
+    }
+    .cuestionario label {
+        font-size: 28px;
+    }
+
+    .cuestionario input[type="button"] {
+        width: 100%;
+        font-size: 36px;
+    }
+    .cuestionario input[type="radio"] {
+        transform: scale(1.5);
+    }
+
+    .switch {
+        width: 70px;
+        height: 34px;
+    }
+    .slider {
+        border-radius: 17px;
+    }
+
+    .slider::before {
+        height: 26px;
+        width: 26px;
+    }
+
+    .img {
+        height: 60vh;
+        width: auto;
+        max-width: 90%;
+    }
+    .imagenes .texto {
+        width: 50%;
+    }
 }
 
 /* Media Query para pantalla con medidas de IPhone 14 Pro Max*/
@@ -231,11 +624,11 @@ footer a {
     }
 
     nav ul {
-        padding: 5px;
+        padding: 4px;
     }
 
     nav li {
-        font-size: 16px;
+        font-size: 14px;
         margin: 5px;
     }
 
@@ -288,293 +681,89 @@ footer a {
         color: #380467;
     }
 
-}
+    .formulario {
+        max-width: 400px;
+        max-height: 600px;
+    }
 
-/* Formulario de contacto*/
-.formulario {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+    .cuestionario {
+        width: 400px;
+        height: fit-content;
+        margin: 5px auto;
+    }
 
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    color: black;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
+    .cuestionario h2 {
+        font-size: 24px;
+    }
 
-input[type="button"] {
-    background-color: #8c2df0;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+    .cuestionario legend {
+        font-size: 18px;
+    }
 
-input[type="submit"]:hover {
-    background-color: #661dac;
-}
-/* Cuestionario */
-.cuestionario {
-    height: fit-content;
-    width: 40%;
-    margin: 0 auto;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 25px;
-}
+    .cuestionario label {
+        font-size: 16px;
+    }
 
-.cuestionario textarea {
-    resize: none;
-}
+    .switch {
+        width: 50px;
+        height: 20px;
+    }
 
-.cuestionario fieldset {
-    border: none;
-    margin-bottom: 20px;
-}
+    .slider::before {
+        height: 16px;
+        width: 16px;
+        left: 4px;
+        bottom: 2px;
+    }
 
-.cuestionario input[type="range"] {
-    width: 100%;
-}
+    .carrusel {
+        height: 50vh;
+    }
+    .img {
+        height: auto;
+        width: 90%;
+        max-width: 400px;
+    }
+    .texto {
+        max-width: 300px;
+    }
+    .texto h3 {
+        padding: 10px;
+        font-size: 18px;
+    }
+    .texto p {
+        padding: 10px;
+        font-size: 12px;
+    }
 
-.cuestionario input[type="submit"] {
-    background-color: #8c2df0;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
+    .puntos .bold {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
 
-.cuestionario input[type="submit"]:hover {
-    background-color: #661dac;
-}
-/* Le damos estilo para que se centre el carrusel en la pantalla y se centre su contenido */
-.carrusel{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    width: 100%;
-    height: 70vh;
-}
-/* Le damos estilo para que muestren flexibles y centradas */
-.imagenes {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: end;
-}
-/* Le damos estilo a la imagen para que tenga sombra y le marcamos una grandaria, se rescalee segun la resolucion y se resalten los colores */
-.img {
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.85);
-    height: 576px;
-    width: 1134px;
-    border-radius: 15px;
-    margin: 5px;
-    object-fit: cover;
-    filter: saturate(175%);
-}
-/* Marcamos el estilo para que al estar inactivo el texto sea transparente y se ubique en la posición -15 de y */
-.texto {
-    overflow: hidden;
-    position: absolute;
-    flex-direction: column;
-    transform: translateY(-15px);
-    margin-bottom: 9px;
-    backdrop-filter: blur(20px);
-    background-color: rgba(63, 106, 138, 0.21);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 30px;
-}
-/* Marcamos el estilo del titulo del curso */
-.texto h3 {
-    text-shadow: 0px 0px 15px black;
-    padding-top: 40px;
-    color: wheat;
-    font-weight: 300;
-    font-size: 36px;
-}
-/* Marcamos el estilo de la descripción */
-.text p {
-    align-items: center;
-    padding: 20px;
-    font-size: 0px;
-    font-weight: 300;
-}
-/* Para que al estar inactivo se muestre de este tamaño y al volver a ese estado tarde*/
-.imagenes .texto {
-    width: 600px;
-    height: 100px;
-    transition: 2s;
-}
-/* Para que cuando se pase el raton por encima se mueva el texto hacia arriba y se oscurezca para que sea mas visible */
-.imagenes:hover .texto{
-    transition: height 1s, transform 1s, background-color 1s;
-    transform: translateY(-80px);
-    height: 250px;
-   
-}
-/* Para que cuando no esté el raton encima se marque */
-.imagenes:hover .texto p {
-    transition: font-size 0s .2s linear;
-    font-size: 20px;
-    font-weight: 300;
-}
-/* Los mantendremos centrados para que no se muevan */
-.puntos {
-    display: flex;
-    align-items: center;
-    justify-content: center;   
-}
-/* Esto marcará el punto de color negro con un font weight de 500 para que sea un punto grande */
-.puntos p {
-    font-size: 100px;
-    font-weight: 500;
-    margin-top: -50px;
-    color: black;
-}
-    /* Para que se vea bien los puntos al ser resaltado aumentamos el peso de la fuente y le cambiamos el color */
-.puntos .bold {
-    font-weight: 700;
-    margin-left: 10px;
-    margin-right: 10px;
-    color: #5E17EB;
-}
+    .imagenes:hover .texto {
+        transform: translateY(-20px);
+        width: 300px;
+        height: 150px;
+    
+    }
+    .imagenes:hover .texto p {
+        font-size: 14px;
+    }
 
-/* Boton tema claro-oscuro*/
+    .imagenes .texto {
+        height: 100px;
+    }
 
-.claro {
-    background: linear-gradient(135deg, #f7f5fd, #f7f5fd, #e4ddf7, #d1c1f1,
-    #b99de8,#a275dd,#9357d0,#8245bc);
-    color: #341754;
-    transition: all 1s ease;
-    animation: fondoanimado 10s infinite;
-    background-size: 200% 200%;
+    .custom-alert {
+        bottom: 10px;
+        right: 10px;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .cuestionario input[type="button"]{
+        padding: 8px 16px;
+        font-size: 16px;
+    }
 }
-.claro .portada span {
-    color: #e7dcf8 ;
-}
-.claro a {
-    color: #341754;
-}
-.claro nav {
-    background-color: #b99de8;
-}
-.claro header {
-    background-color: #a275dd;
-}
-.claro footer {
-    background: linear-gradient(135deg, #d4c0f2, #ba98e8,#8752cb);
-    color: #341754;
-}
-.claro .formulario {
-    background: linear-gradient(135deg,#8752cb, #d4c0f2, #ba98e8,#8752cb);
-}
-.claro .cuestionario {
-    background: linear-gradient(135deg,#bdaed1, #d4c0f2, #ba98e8,#8752cb);
-}
- /* Fondo gradiente animado, conectado a una animación */
-.oscuro {
-    background: linear-gradient(135deg, #00b7d4, #505488, #2F3F80, #161569,
-            #5A4894, #A950A1, #FF7CAE);
-    background-size: 200% 200%;
-    animation: fondoanimado 10s infinite;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    color: wheat;
-}
-.oscuro a {
-    color: wheat;
-}
-.oscuro footer{
-    background: linear-gradient(135deg, #8c2df0, #661dac);
-}
-.oscuro .formulario {
-    background: linear-gradient(135deg,#FF7CAE, #2F3F80, #161569,#5A4894,#FF7CAE);
-}
-.oscuro .cuestionario {
-    background: linear-gradient(135deg,#927cff, #2F3F80, #161569,#5A4894,#FF7CAE);
-}
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-    margin: 6px;
-}
-.switch toogle {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #9a86fd;
-    border-radius: 34px;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-}
-.slider::before {
-    position: absolute;
-    content: '';
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    border-radius: 50%;
-    background-color: #fff;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-}
-#toogle {
-    display: none;
-}
-#toogle:checked+.slider {
-    background-color: #ffdb70;
-}
-#toogle:focus+.slider {
-    box-shadow: 0 0 1px #ffdb70;
-}
-#toogle:checked+.slider::before{
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-}
-/* Alert customizado*/
-.custom-alert {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #a10df1;
-    color: white;
-    padding: 15px;
-    border-radius: 5px;
-  }
-  
-  .cerrarAlert {
-    margin-left: 15px;
-    cursor: pointer;
-  }
-  

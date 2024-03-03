@@ -3,20 +3,30 @@
 function showAlert() {
     var alert = document.getElementById("customAlert");
     alert.style.display = "block";
-  }
+}
   // Esta funcion cierra la ventana emergente cuando se completa con exito el formulario
-  function closeAlert() {
+function closeAlert() {
     var alert = document.getElementById("customAlert");
     alert.style.display = "none";
-  }
+}
 // Esta funcion limpia los campos del formulario
-  function limpiarCampos() {
+function limpiarCampos() {
     document.getElementById("nombre").value = ""
     document.getElementById("email").value = ""
     document.getElementById("telefono").value = ""
     document.getElementById("mensaje").value = ""
-  }
-  
+}
+// Esta funcion limpia los campos del cuestionario
+function limpiarCuestionario() {
+    document.getElementById("nombre").value = ""
+    document.getElementById("correo").value = ""
+    document.getElementById("edad").value = ""
+    document.getElementById("pais").value = ""
+    document.getElementById("facilidad").value = 5
+    document.getElementById("si").checked = false
+    document.getElementById("no").checked = false
+}
+  // Esta funcion valida el formulario de contacto
 function validarFormulario() {
     // Declaración de variables
 
@@ -31,27 +41,24 @@ function validarFormulario() {
     // Si el nombre no tiene contenido no será válido
     if (nombre.trim() === "") {
         alert("Por favor, no puede dejar el campo nombre vacío.")
-        return false;
     }
     // Si el email no tiene contenido no será válido
     if (email.trim() === "") {
         alert("Por favor, no puede dejar el campo email vacío.")
-        return false;
     }
     // Si el email no tiene el patrón determinado no será válido
     if (!email.match(patronEmail)) {
         alert("Por favor, ingresa un email válido.")
-        return false;
+    
     }
     // Si el mensaje no contiene nada no será válido.
     if (mensaje.trim() === "") {
         alert("Por favor, ingrese el mensaje para el contacto.")
-        return false;
+    
     }
 
     if (!telefono.match(patronTelefono)) {
         alert("Por favor, ingrese un número de teléfono válido.")
-        return false;
     }
     else {
         // En caso de que se complete con exito el formulario se limpiará y mostrará la alerta personalizada
@@ -60,31 +67,90 @@ function validarFormulario() {
     }
     
 }
+// Esta funcion valida el cuestionario de opinion
+function validarCuestionario() {
+    let nombre = document.getElementById("nombre").value
+    let email = document.getElementById("correo").value
+    let edad = document.getElementById("edad").value
+    let pais = document.getElementById("pais").value
+    let recomendSi = document.getElementById("si")
+    let recomendNo = document.getElementById("no")
+    let patronEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+
+    if (nombre.trim() === "") {
+        alert("Por favor, no puede dejar el campo nombre vacío.")
+    }
+    if (email.trim() === "") {
+        alert("Por favor, no puede dejar el campo email vacío.")
+    }
+    if (!email.match(patronEmail)) {
+        alert("Por favor, ingresa un email válido.")
+    }
+    if (edad === NaN) {
+        alert("Por favor, selecciona tu edad")
+    }
+    if (edad > 100) {
+        alert("Por favor, inserte una edad válida.")
+    }
+    if (pais.trim() === "") {
+        alert("Por favor, no puede dejar el campo país vacío.")
+    }
+
+    if (!recomendSi.checked && !recomendNo.checked) {
+        alert("Por favor, seleccione una de las dos opciones")
+    }
+    else {
+        showAlert()
+        limpiarCuestionario()
+    }
+
+
+}
+// Mostrar contenido oculto
+function mostrarContenido(id){
+    let elemento = document.getElementById(id)
+    // Si el elemento <p> esta escondido entonces lo muestra
+    if (elemento.style.display === "none") {
+        elemento.style.display = "block"
+        // Le añadimos un timeOut para que espere un poco para mostrar
+        setTimeout(function() {
+            elemento.classList.add("mostrar")
+        }, 50)
+    } else {
+        // En caso de que display no sea none entonces quitaremos mostrar con mayor tiempo
+        elemento.classList.remove("mostrar");
+        setTimeout(function() {
+            elemento.style.display = "none"
+        }, 500)
+    }
+}
 // Carrusel
-// Declaramos un diccionario imagenes que guardará el nombre del curso, url de la imagen y la descripción
-let imagenes = [
-    {
-        "url": "../img/html-img.png",
-        "nombre": "HTML5",
-        "descripcion": "Prueba ahora nuestro curso completo de HTML5!"
-    },
-    {
-        "url": "../img/css-img.png",
-        "nombre": "CSS3",
-        "descripcion": "Prueba ahora nuestro curso completo de CSS3!"
-    },
-    {
-        "url": "../img/js-img.png",
-        "nombre": "Javascript",
-        "descripcion": "Prueba ahora nuestro curso completo de Javascript!"
-    },
-    {
-        "url": "../img/react-img.png",
-        "nombre": "React",
-        "descripcion": "Prueba ahora nuestro curso completo de React!"
-    },
-]
-/*Declaramos los botones, imagenes y texto, 
+// Para que no nos cargue los eventos todo el rato en cualquier pagina, le especificamos que solo haga lo del carrusel cuando este en la pagina de cursos
+if (window.location.href.includes("pagina-cursos.html")) {
+    // Declaramos un diccionario imagenes que guardará el nombre del curso, url de la imagen y la descripción
+    let imagenes = [
+        {
+            "url": "../img/html-img.png",
+            "nombre": "HTML5",
+            "descripcion": "Prueba ahora nuestro curso completo de HTML5!"
+        },
+        {
+            "url": "../img/css-img.png",
+            "nombre": "CSS3",
+            "descripcion": "Prueba ahora nuestro curso completo de CSS3!"
+        },
+        {
+            "url": "../img/js-img.png",
+            "nombre": "Javascript",
+            "descripcion": "Prueba ahora nuestro curso completo de Javascript!"
+        },
+        {
+            "url": "../img/react-img.png",
+            "nombre": "React",
+            "descripcion": "Prueba ahora nuestro curso completo de React!"
+        },
+    ]
+    /*Declaramos los botones, imagenes y texto, 
 la variable actual que representa la imagen seleccionada en el carrusel que será la primera */
 let atras = document.getElementById('atras')
 let adelante = document.getElementById("adelante")
@@ -92,8 +158,6 @@ let imagen = document.getElementById('img')
 let puntos = document.getElementById('puntos')
 let texto = document.getElementById('texto')
 let actual = 0
-// Para que no nos cargue los eventos todo el rato en cualquier pagina, le especificamos que solo haga lo del carrusel cuando este en la pagina de cursos
-if (window.location.href.includes("pagina-cursos.html")) {
     document.addEventListener("DOMContentLoaded", function() {
         cargarImagen(actual);
     });

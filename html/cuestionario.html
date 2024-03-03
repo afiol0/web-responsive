@@ -25,7 +25,7 @@
             <li><a href="./pagina-ayuda.html">¿Quiénes Somos?</a></li>
             <li><a href="./formulario-contacto.html">Contacto</a></li>
         </ul>
-        <!-- Boton de cambio de tema oscuro-claro-->
+        
         <label class="switch">
             <input type="checkbox" id="toogle">
             <span class="slider"></span>
@@ -40,27 +40,31 @@
             <fieldset>
                 <legend>Información personal:</legend>
                 <label for="nombre">Nombre:</label><br>
-                <input type="text" id="nombre" name="nombre" required><br>
+                <input type="text" id="nombre" name="nombre"><br>
                 <label for="correo">Correo electrónico:</label><br>
-                <input type="email" id="correo" name="correo" required><br>
+                <input type="email" id="correo" name="correo"><br>
                 <label for="edad">Edad:</label><br>
-                <input type="number" id="edad" name="edad" required><br>
+                <input type="number" id="edad" name="edad" min="0" max="100"><br>
                 <label for="pais">País:</label><br>
-                <input type="text" id="pais" name="pais" required><br>
+                <input type="text" id="pais" name="pais"><br>
             </fieldset>
             <fieldset>
                 <legend>Opinión sobre DevInnovation:</legend>
                 <label for="facilidad">¿Qué tan fácil de usar encontraste la página?</label><br>
-                <input type="range" id="facilidad" name="facilidad" min="1" max="10" required><br>
+                <input type="range" id="facilidad" name="facilidad" min="1" max="10"><br>
                 <label for="recomendacion">¿Recomendarías la página a otras personas interesadas en aprender programación web?</label><br>
-                <input type="radio" id="si" name="recomendacion" value="Sí" required>
+                <input type="radio" id="si" name="recomendacion" value="Sí">
                 <label for="si">Sí</label>
                 <input type="radio" id="no" name="recomendacion" value="No">
                 <label for="no">No</label><br>
             </fieldset>
-            <input type="submit" value="Enviar">
+            <input type="button" value="Enviar" onclick="validarCuestionario()">
         </form>
     </div>
+    <div id="customAlert" class="custom-alert">
+        <span class="cerrarAlert" onclick="closeAlert()">&times;</span>  
+        <strong>Cuestionario completado!</strong> Muchas gracias, valoramos mucho tu aportacion!
+      </div>
     <script src="../js/script.js"></script>
 </body>
 
