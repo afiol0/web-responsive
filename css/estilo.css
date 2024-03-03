@@ -349,7 +349,7 @@ input[type="button"]:hover {
 }
 
 /* Boton tema claro-oscuro*/
-
+/* Tema claro con fondo animado */
 .claro {
     background: linear-gradient(135deg, #f7f5fd, #f7f5fd, #e4ddf7, #d1c1f1,
             #b99de8, #a275dd, #9357d0, #8245bc);
@@ -388,7 +388,7 @@ input[type="button"]:hover {
     background: linear-gradient(135deg, #bdaed1, #d4c0f2, #ba98e8, #8752cb);
 }
 
-/* Fondo gradiente animado, conectado a una animación */
+/* Fondo gradiente animado, conectado a una animación del modo oscuro*/
 .oscuro {
     background: linear-gradient(135deg, #00b7d4, #505488, #2F3F80, #161569,
             #5A4894, #A950A1, #FF7CAE);
@@ -430,7 +430,7 @@ input[type="button"]:hover {
     width: 0;
     height: 0;
 }
-
+/* Animación de la esfera blanca dentro del switch para que se mueva */
 .slider {
     position: absolute;
     cursor: pointer;
@@ -456,7 +456,7 @@ input[type="button"]:hover {
     -webkit-transition: 0.8s;
     transition: 0.8s;
 }
-
+/* Botón interactivo de cambio de tema para que al tocarlo haga animación y cambie el color*/
 #toogle {
     display: none;
 }
