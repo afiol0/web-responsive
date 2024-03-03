@@ -11,23 +11,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins';
-    color: wheat;
-}
-
-/* Estilos del body de la página */
-body {
-    /* Fondo gradiente animado, conectado a una animación realizada más abajo del css*/
-    background: linear-gradient(135deg, #00b7d4, #505488, #2F3F80, #161569,
-            #5A4894, #A950A1, #FF7CAE);
-    background-size: 200% 200%;
-    animation: fondoanimado 10s infinite;
-    background-color: aquamarine;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-
-}
-
+}    
 /* Encabezado de la página, el header tiene un color mas oscuro que las otras secciones*/
 header {
     height: 90px;
@@ -57,6 +41,11 @@ nav button img{
 nav li {
     margin: 0 50px;
     font-size: 30px
+}
+
+label img {
+    margin: 5px;
+    width: 42px;
 }
 
 /* Estilos para los enlaces para que no tengan ningun tipo de propiedad especial */
@@ -98,7 +87,6 @@ footer {
     height: 12vh;
     margin-top: 10px;
     clear: both;
-    background: linear-gradient(135deg, #8c2df0, #661dac);
 }
 
 /* Estilos para los enlaces en el pie de página */
@@ -307,7 +295,6 @@ footer a {
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #483d72;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -325,7 +312,7 @@ textarea {
     box-sizing: border-box;
 }
 
-input[type="submit"] {
+input[type="button"] {
     background-color: #8c2df0;
     color: white;
     padding: 10px 20px;
@@ -339,11 +326,9 @@ input[type="submit"]:hover {
 }
 /* Cuestionario */
 .cuestionario {
-    color: black;
     height: fit-content;
     width: 40%;
     margin: 0 auto;
-    background-color: #483d72;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -422,13 +407,12 @@ input[type="submit"]:hover {
     padding-top: 40px;
     color: wheat;
     font-weight: 300;
-    font-size: 27px;
+    font-size: 36px;
 }
 /* Marcamos el estilo de la descripción */
 .text p {
     align-items: center;
     padding: 20px;
-    color: white;
     font-size: 0px;
     font-weight: 300;
 }
@@ -443,14 +427,13 @@ input[type="submit"]:hover {
     transition: height 1s, transform 1s, background-color 1s;
     transform: translateY(-80px);
     height: 250px;
-    background-color: rgba(63, 106, 138, 0.71);
+   
 }
-/* Para que cuando no esté el raton encima se marque con sombra el texto */
+/* Para que cuando no esté el raton encima se marque */
 .imagenes:hover .texto p {
     transition: font-size 0s .2s linear;
-    font-size: 23px;
+    font-size: 20px;
     font-weight: 300;
-    text-shadow: 0px 0px 10px black;
 }
 /* Los mantendremos centrados para que no se muevan */
 .puntos {
@@ -472,3 +455,126 @@ input[type="submit"]:hover {
     margin-right: 10px;
     color: #5E17EB;
 }
+
+/* Boton tema claro-oscuro*/
+
+.claro {
+    background: linear-gradient(135deg, #f7f5fd, #f7f5fd, #e4ddf7, #d1c1f1,
+    #b99de8,#a275dd,#9357d0,#8245bc);
+    color: #341754;
+    transition: all 1s ease;
+    animation: fondoanimado 10s infinite;
+    background-size: 200% 200%;
+}
+.claro .portada span {
+    color: #e7dcf8 ;
+}
+.claro a {
+    color: #341754;
+}
+.claro nav {
+    background-color: #b99de8;
+}
+.claro header {
+    background-color: #a275dd;
+}
+.claro footer {
+    background: linear-gradient(135deg, #d4c0f2, #ba98e8,#8752cb);
+    color: #341754;
+}
+.claro .formulario {
+    background: linear-gradient(135deg,#8752cb, #d4c0f2, #ba98e8,#8752cb);
+}
+.claro .cuestionario {
+    background: linear-gradient(135deg,#bdaed1, #d4c0f2, #ba98e8,#8752cb);
+}
+ /* Fondo gradiente animado, conectado a una animación */
+.oscuro {
+    background: linear-gradient(135deg, #00b7d4, #505488, #2F3F80, #161569,
+            #5A4894, #A950A1, #FF7CAE);
+    background-size: 200% 200%;
+    animation: fondoanimado 10s infinite;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: wheat;
+}
+.oscuro a {
+    color: wheat;
+}
+.oscuro footer{
+    background: linear-gradient(135deg, #8c2df0, #661dac);
+}
+.oscuro .formulario {
+    background: linear-gradient(135deg,#FF7CAE, #2F3F80, #161569,#5A4894,#FF7CAE);
+}
+.oscuro .cuestionario {
+    background: linear-gradient(135deg,#927cff, #2F3F80, #161569,#5A4894,#FF7CAE);
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin: 6px;
+}
+.switch toogle {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #9a86fd;
+    border-radius: 34px;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+.slider::before {
+    position: absolute;
+    content: '';
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    border-radius: 50%;
+    background-color: #fff;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+#toogle {
+    display: none;
+}
+#toogle:checked+.slider {
+    background-color: #ffdb70;
+}
+#toogle:focus+.slider {
+    box-shadow: 0 0 1px #ffdb70;
+}
+#toogle:checked+.slider::before{
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+/* Alert customizado*/
+.custom-alert {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #a10df1;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  .cerrarAlert {
+    margin-left: 15px;
+    cursor: pointer;
+  }
+  

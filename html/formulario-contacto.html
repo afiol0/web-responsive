@@ -25,13 +25,18 @@
             <li><a href="./pagina-ayuda.html">¿Quiénes Somos?</a></li>
             <li><a href="./cuestionario.html">Cuestionario</a></li>
         </ul>
+        <!-- Boton de cambio de tema oscuro-claro-->
+        <label class="switch">
+            <input type="checkbox" id="toogle">
+            <span class="slider"></span>
+        </label>
     </nav>
 
     <!-- Contenido principal de la página -->
     
     <div class="formulario">
         <h2>Formulario de contacto</h2>
-        <form action="" method="" id="formulario" onsubmit="return validarFormulario()">
+        <form action="" method="" id="formulario" >
 
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" name="nombre">
@@ -45,21 +50,14 @@
             <label for="mensaje">Mensaje:</label>
             <textarea id="mensaje" name="mensaje" rows="4"></textarea>
 
-            <input type="submit" value="Enviar">
+            <input type="button" value="Enviar" onclick="validarFormulario()">
         </form>
     </div>
-
+    <div id="customAlert" class="custom-alert">
+        <span class="cerrarAlert" onclick="closeAlert()">&times;</span>  
+        <strong>Formulario completado!</strong> Muchas gracias por ponerte en contacto con nosotros.
+      </div>
     <!-- Pie de página -->
-    <footer>
-        <!-- Información de contacto -->
-        <p>Contáctanos al 444-444-444 or envía un correo a</p>
-        <a href="mailto:soporte@devinnovation.com">soporte@devinnovation.com</a>
-
-        <!-- Enlace al aviso de privacidad -->
-        <p>Para ver el aviso de privacidad,
-            accede a devinnovation.com/aviso</p>
-    </footer>
-
     <script src="../js/script.js"></script>
 </body>
 
